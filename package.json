@@ -1,0 +1,24 @@
+{
+  "name": "crud--nodeexpresspostgresql",
+  "version": "1.0.0",
+  "description": "Example REST API Using Node.js, Express.js, and PostgreSQL Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oktrifianto/CRUD--NodeExpressPostgreSQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oktrifianto/CRUD--NodeExpressPostgreSQL/issues"
+  },
+  "homepage": "https://github.com/oktrifianto/CRUD--NodeExpressPostgreSQL#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  }
+}
