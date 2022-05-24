@@ -26,7 +26,21 @@ const getUserById = (req, res) => {
   });
 }
 
+// Create new user 
+// @see https://stackoverflow.com/questions/37243698/how-can-i-find-the-last-insert-id-with-node-js-and-postgresql
+const createUser = (req, res) => {
+  const { name, email } = req.body;
+  pool.query(`INSERT INTO users (name, email) VALUES ('${name}', '${email}') RETURNING id`, (err, results) => {
+    if (err) throw err;
+    res.status(201).json({
+      status: res.statusCode,
+      message : `New user added with ID: ${results.rows[0].id}`
+    });
+  });
+}
+
 module.exports = {
   getUsers,
-  getUserById
+  getUserById,
+  createUser
 };
