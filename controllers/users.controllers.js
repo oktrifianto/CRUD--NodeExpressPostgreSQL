@@ -39,8 +39,20 @@ const createUser = (req, res) => {
   });
 }
 
+// Delete one user
+const deleteUser  = (req, res) => {
+  const { id } = req.params;
+  pool.query(`DELETE FROM users WHERE id = ${id}`, (err, results) => {
+    if (err) throw err;
+    res.status(200).json({
+      message : `User with ID ${id} has been deleted.`
+    });
+  });
+}
+
 module.exports = {
   getUsers,
   getUserById,
-  createUser
+  createUser,
+  deleteUser
 };
