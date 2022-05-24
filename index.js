@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 app.get('/users', lib.getUsers);
 app.get('/user/:id', lib.getUserById);
 app.post('/user', lib.createUser);
+app.delete('/user/:id', lib.deleteUser);
 
 app.listen(port, () => {
   console.log(`Your server running on port ${port}`);
