@@ -10,7 +10,9 @@ app.get('/', (req, res) => {
   });
 });
 
+// Routes
 app.get('/users', lib.getUsers);
+app.get('/user/:id', lib.getUserById);
 
 app.listen(port, () => {
   console.log(`Your server running on port ${port}`);
