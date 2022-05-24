@@ -16,6 +16,7 @@ app.get('/users', lib.getUsers);
 app.get('/user/:id', lib.getUserById);
 app.post('/user', lib.createUser);
 app.delete('/user/:id', lib.deleteUser);
+app.put('/user/:id', lib.updateUser);
 
 app.listen(port, () => {
   console.log(`Your server running on port ${port}`);
