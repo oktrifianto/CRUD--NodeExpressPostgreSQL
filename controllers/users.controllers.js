@@ -50,9 +50,23 @@ const deleteUser  = (req, res) => {
   });
 }
 
+// Update user
+const updateUser = (req, res) => {
+  const { id } = req.params;
+  const { name, email } = req.body;
+
+  pool.query(`UPDATE users SET name='${name}', email='${email}' WHERE id = ${id}`, (err, results) => {
+    if (err) throw err;
+    res.status(200).json({
+      message: 'User successfully updated.'
+    });
+  });
+}
+
 module.exports = {
   getUsers,
   getUserById,
   createUser,
-  deleteUser
+  deleteUser,
+  updateUser
 };
