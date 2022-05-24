@@ -15,6 +15,12 @@ brew install postgresql
 brew services start postgresql
 ```
 
+<em>Stop running database</em>
+
+```
+brew services stop postgresql
+```
+
 ---
 
 <em>Command Prompt</em>
@@ -152,21 +158,21 @@ You are now connected to database "api" as user "me".
 api=> 
 ```
 
+Must to connect `api` database name.
+
 ---
 
 ## Creating a table in POSTGRES
 
 ```
-postgres=> CREATE TABLE users (ID SERIAL PRIMARY KEY,
-postgres(> name VARCHAR(30),
-postgres(> email VARCHAR(30));
+api=> CREATE TABLE users (ID SERIAL PRIMARY KEY, name VARCHAR(30), email VARCHAR(30));
 CREATE TABLE
 ```
 
 test 
 
 ```
-postgres=> SELECT * FROM users;
+api=> SELECT * FROM users;
  id | name | email 
 ----+------+-------
 (0 rows)
@@ -175,10 +181,10 @@ postgres=> SELECT * FROM users;
 test: add two `users` to init data.
 
 ```
-postgres=> INSERT INTO users (name, email) VALUES ('John', 'john@mail.com');
+api=> INSERT INTO users (name, email) VALUES ('John', 'john@mail.com');
 INSERT 0 1
 
-postgres=> INSERT INTO users (name, email) VALUES ('Jane', 'jane@mail.com');
+api=> INSERT INTO users (name, email) VALUES ('Jane', 'jane@mail.com');
 INSERT 0 1
 
 ```
@@ -186,7 +192,7 @@ INSERT 0 1
 let see:
 
 ```
-postgres=> SELECT * FROM users;
+api=> SELECT * FROM users;
  id | name |     email     
 ----+------+---------------
   1 | John | john@mail.com
